@@ -1,7 +1,7 @@
 XXX-RADIO
 
 
-XXX-radio, a command line demodulator for SDRplay and Airspy
+XXX-radio, a command line demodulator for SDRplay or Airspy
 
 Input - depending on the configuration - is through an SDRplay device
 (either RSP1 or RSP2) or an Airspy device. All parameters
@@ -47,5 +47,18 @@ The last line is the command (again, for XXX_radio read SDRplay_radio or airspy_
 
 To listen - in the Netherlands - to the only classical music station in the FM broadcast band use
 sdrplay-radio -f 94700000 -g 30 -M fm-stereo -D -Z |aplay -r 22050 -f S16_LE -t raw -c 2
+
+Creating an executable
+
+The CMakeLists.txt file can be used wirh cmake to create Makefiles. 
+
+	mkdir build
+	cd build
+	cmake .. -DSDRPLAY=ON
+	make
+	sudo make install
+
+is the normal way of generating an executable and installing it in /usr/local/bin
+
 
 
