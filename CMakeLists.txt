@@ -2,8 +2,10 @@ cmake_minimum_required( VERSION 2.8.11 )
 set (objectName sdrplay-radio)
 set (CMAKE_CXX_FLAGS "${CMAKE_XCC_FLAGS} -Wall -std=c++11 -flto")
 set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -flto")
-#	modify if you want
-set (CMAKE_INSTALL_PREFIX /usr/local/bin)
+if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+    set (CMAKE_INSTALL_PREFIX "/usr/local/bin" CACHE PATH "default install path" FORCE )
+endif()
+#set (CMAKE_INSTALL_PREFIX /usr/local/bin)
 
 if(MINGW)
     add_definitions ( -municode)
