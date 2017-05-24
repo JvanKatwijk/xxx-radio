@@ -25,7 +25,7 @@ The command line parameters are
 	-D enables de-emphasis (default: off), useful for FM
 	-Z enables lowpass filtering (default: off) of the audiosignal
 	-s audio frequency, default is 22050
-	-g tuner_gain (default: 35)
+	-g tuner_gain, range 1 .. 100 (default: 35)
 	-O output filename ( a '-' dumps output to stdout, as does
 	   omitting a filename.
 
