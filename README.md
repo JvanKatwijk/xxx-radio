@@ -9,6 +9,8 @@ are set through the command line. Output is to a file (or stdout if
 no file is selected). The inputrate is internally converted to
 a working rate of 192000, so FM stereo decoding is possible.
 
+The command line parameters are
+
 	-f Frequency in Hz
 	-F Frequency in kHz
 	A frequency HAS to be specified, it is the only value for
@@ -28,24 +30,22 @@ a working rate of 192000, so FM stereo decoding is possible.
 	   omitting a filename.
 
 For the SDRplay we have additionally the following parameters
+
 	-d device index, default: 0
 	-A antenna selector (only for RSP 2, default antenna A)
 	-G autogain (default: off)
 
-	The program produces signed 16 bit int values, single channel,
-	unless mode fm-stereo is selected, in which case two channels
-	interleaved are produced.
+The program produces signed 16 bit int values, single channel,
+unless mode fm-stereo is selected, in which case two channels
+interleaved are produced.
 
 	XXX_radio -f 94700000 | play -t raw -r 22050 -es -b 16 -c 1 
 	XXX_radio -f 94700000 -M fm-stereo | play -t raw -r 22050 -es -b 16 -c 2 
 	XXX_radio -f 169650000 [-p3] |multimon-ng -a FLEX -t raw /dev/stdin
 
-The last line is the command (again, for XXX_radio read sdrplay_radio or airspy_radiom whichever you configured) for getting the messages of the P2000 system
-in the Netherlands. It - obviously - assumes that you have installed
-multimon.
+The last line is the command (again, for XXX_radio read SDRplay_radio or airspy_radio whichever you configured) for getting the messages of the P2000 system in the Netherlands. It - obviously - assumes that you have installed multimon.
 
-To listen - in the Netherlands - to the only classical music station in
-the FM broadcast band use
+To listen - in the Netherlands - to the only classical music station in the FM broadcast band use
 sdrplay-radio -f 94700000 -g 30 -M fm-stereo -D -Z |aplay -r 22050 -f S16_LE -t raw -c 2
 
 
