@@ -58,7 +58,17 @@ The CMakeLists.txt file can be used wirh cmake to create Makefiles.
 	make
 	sudo make install
 
-is the normal way of generating an executable and installing it in /usr/local/bin
+is the normal way of generating an executable and
+installing it in /usr/local/bin
+
+Packages needed
+
+To create the executable the following packages are needed
+
+	a. fftw			used in filtering
+	b. pthreads
+	c. libsndfile 
+	d. libsamplerate	used in non integer decimation
 
 
 

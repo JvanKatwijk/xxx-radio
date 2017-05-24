@@ -40,10 +40,10 @@ endif ()
 ########################################################################
 	find_package (PkgConfig)
 
-        find_package(FFTW3f)
-        if (NOT FFTW3F_FOUND)
-            message(FATAL_ERROR "please install FFTW3")
-        endif ()
+	find_package(FFTW3f)
+	if (NOT FFTW3F_FOUND)
+	    message(FATAL_ERROR "please install FFTW3")
+	endif ()
 
 
 	find_library (PTHREADS pthread)
@@ -54,16 +54,16 @@ endif ()
 	endif (NOT(PTHREADS))
 
 	find_package(LibSndFile)
-        if (NOT LIBSNDFILE_FOUND)
-            message(FATAL_ERROR "please install libsndfile")
-        endif ()
-        list(APPEND extraLibs ${LIBSNDFILE_LIBRARY})
+	if (NOT LIBSNDFILE_FOUND)
+	    message(FATAL_ERROR "please install libsndfile")
+	endif ()
+	list(APPEND extraLibs ${LIBSNDFILE_LIBRARY})
 
-        find_package(LibSampleRate)
-        if (NOT LIBSAMPLERATE_FOUND)
-            message(FATAL_ERROR "please install libsamplerate")
-        endif ()
-        list(APPEND extraLibs ${LIBSAMPLERATE_LIBRARY})
+	find_package(LibSampleRate)
+	if (NOT LIBSAMPLERATE_FOUND)
+	    message(FATAL_ERROR "please install libsamplerate")
+	endif ()
+	list(APPEND extraLibs ${LIBSAMPLERATE_LIBRARY})
 
 
 #######################################################################

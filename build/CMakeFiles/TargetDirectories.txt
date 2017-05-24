@@ -1,8 +1,0 @@
-/home/jan/xxx-radio/build/CMakeFiles/install/strip.dir
-/home/jan/xxx-radio/build/CMakeFiles/install/local.dir
-/home/jan/xxx-radio/build/CMakeFiles/install.dir
-/home/jan/xxx-radio/build/CMakeFiles/list_install_components.dir
-/home/jan/xxx-radio/build/CMakeFiles/edit_cache.dir
-/home/jan/xxx-radio/build/CMakeFiles/uninstall.dir
-/home/jan/xxx-radio/build/CMakeFiles/airspy-radio.dir
-/home/jan/xxx-radio/build/CMakeFiles/rebuild_cache.dir
