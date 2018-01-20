@@ -2,3 +2,7 @@
 The (command line) structure of the software was strongly influenced by the
 fm software of the rtlsdr library.
 
+The script to call the radio and the multimon decoder is from
+https://nl.oneguyoneblog.com/2016/08/09/p2000-ontvangen-decoderen-raspberry-pi/
+
+

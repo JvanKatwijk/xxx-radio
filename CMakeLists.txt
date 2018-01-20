@@ -95,11 +95,19 @@ endif ()
 	endif (SDRPLAY)
 
 	if (AIRSPY)
-           find_package(LibAIRSPY)
-           if (NOT LIBAIRSPY_FOUND)
-               message(FATAL_ERROR "please install airspy library")
-           endif ()
-	   ### include_directories (${AIRSPYLIB_INCLUDE_DIR})
+	   find_path (AIRSPYLIB_INCLUDE_DIR
+                      NAMES airspy.h
+                      PATHS
+                      /usr/local/include/
+                      /usr/local/include/libairspy
+           )
+           include_directories (${AIRSPYLIB_INCLUDE_DIR})
+           find_library (AIRSPYLIB airspy)
+           if(NOT(AIRSPYLIB))
+              message (FATAL_ERROR "please install library for airspy")
+           else(NOT(AIRSPYLIB))
+	      list (APPEND extraLibs ${AIRSPYLIB})
+	   endif ()
 
 	   include_directories (
 	     ./devices/airspy-handler

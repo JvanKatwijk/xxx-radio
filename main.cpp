@@ -4,7 +4,7 @@
  *    Jan van Katwijk (J.vanKatwijk@gmail.com)
  *    Lazy Chair Programming
  *
- *    This file is part of the sdrplay-radio program
+ *    This file is part of the XXX-radio program
  *
  *    XXX-radio is free software; you can redistribute it and/or modify
  *    it under the terms of the GNU General Public License as published by
@@ -27,6 +27,7 @@
 #include        <cstdio>
 #include        <iostream>
 #include	<cstring>
+#include	<csignal>
 #include	"samplerate.h"
 #include	"radio-constants.h"
 #include	"radio-processor.h"
@@ -83,7 +84,7 @@ sighandler (int signum) {
 	return FALSE;
 }
 #else
-static void sighandler(int signum) {
+static void signalHandler(int signum) {
 	fprintf(stderr, "Signal caught, exiting!\n");
 	running. store (false);
 }
@@ -125,7 +126,7 @@ radioProcessor	*theWorker;
 int32_t		tunedFrequency	= -1;
 struct sigaction sigact;
 
-	fprintf (stderr, "%s, Copyright J van Katwijk, Lazy Chair Computing\n",
+	fprintf (stderr, "%s, Copyright Jan van Katwijk\n Lazy Chair Computing\n",
 	                                                 name);
 //	default
 	std::setlocale (LC_ALL, "");
@@ -216,13 +217,9 @@ struct sigaction sigact;
 	inputDevice	-> setVFOFrequency (tunedFrequency);
 
 	fprintf (stderr, "parameters: frequency = %d, working rate = %d, sampling rate = %d\n", inputDevice -> getVFOFrequency (), fmRate, audioRate);
+	signal(SIGINT, signalHandler);  
+
 //	OK, it seems we have a device
-	sigact.sa_handler = sighandler;
-	sigemptyset(&sigact.sa_mask);
-	sigact.sa_flags = 0;
-//	sigaction(SIGINT, &sigact, NULL);
-//	sigaction(SIGTERM, &sigact, NULL);
-//	sigaction(SIGQUIT, &sigact, NULL);
 //
 	theWorker	= new radioProcessor (inputDevice,
 	                                      inputRate,
@@ -243,6 +240,7 @@ struct sigaction sigact;
 	running. store (true);
 	while (running. load ()) 
 	   sleep (1);
+	fprintf (stderr, "got the message, stopping\n");
 	inputDevice	-> stopReader ();
 	theWorker	-> stop ();
 	delete	theWorker;
