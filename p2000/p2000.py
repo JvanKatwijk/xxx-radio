@@ -1,4 +1,6 @@
-#P2000 ONTVANGEN
+#!/usr/bin/python
+#
+#	P2000 ONTVANGEN
 #
 # https://nl.oneguyoneblog.com/2016/08/09/p2000-ontvangen-decoderen-raspberry-pi/
 #
@@ -25,7 +27,7 @@ with open('error.txt','a') as file:
 
 #
 #	adjust the radio
-multimon_ng = subprocess.Popen("airspy-radio -f 169650000 -g 90 | multimon-ng -a FLEX -t raw -",
+multimon_ng = subprocess.Popen("sdrplay-radio -f 169650000 -g 20 | multimon-ng -a FLEX -t raw -",
                                stdout=subprocess.PIPE,
                                stderr=open('error.txt','a'),
                                shell=True)

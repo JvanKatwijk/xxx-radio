@@ -38,9 +38,8 @@ mir_sdr_DeviceT devDesc [4];
 	this	-> inputRate		= rate;
 	this	-> frequency		= frequency;
 	this	-> ppmCorrection	= ppmCorrection;
-	this	-> theGain		= gain;
 	this	-> deviceIndex		= deviceIndex;
-	this	-> autogain		= autogain;
+	this	-> autogain		= true;
 
 	_I_Buffer	= NULL;
 	libraryLoaded	= false;
@@ -99,8 +98,9 @@ ULONG APIkeyValue_length = 255;
 	}
 
 	err			= my_mir_sdr_ApiVersion (&ver);
-	if (ver != MIR_SDR_API_VERSION) {
-	   fprintf (stderr, "Foute API: %f, %d\n", ver, err);
+	if (ver < 2.13) {
+	   fprintf (stderr, "Library incompatible, upgrade to 2.13\n");
+	   throw (23);
 	}
 
 	my_mir_sdr_GetDevices (devDesc, &numofDevs, uint32_t (4));
@@ -114,18 +114,46 @@ ULONG APIkeyValue_length = 255;
            throw (25);
         }
 
-//	if (deviceIndex >= numofDevs)
-//	   this	-> deviceIndex = 0;
-//	hwVersion = devDesc [deviceIndex]. hwVer;
-//	err = my_mir_sdr_SetDeviceIdx (deviceIndex);
+	if (deviceIndex >= numofDevs)
+	   this	-> deviceIndex = 0;
+	hwVersion = devDesc [deviceIndex]. hwVer;
+	err = my_mir_sdr_SetDeviceIdx (deviceIndex);
+//      we know we are only in the frequency range 175 .. 230 Mhz,
+//      so we can rely on a single table for the lna reductions.
+	int	lnaMaxSetting;
+        switch (hwVersion) {
+           case 1:              // old RSP
+              lnaMaxSetting	= 3;
+	      denominator	= 2048;
+              break;
+           case 2:
+              lnaMaxSetting	= 8;
+	      denominator	= 2048;
+              break;
+           case 3:
+              lnaMaxSetting	= 9;
+	      denominator	= 8192;
+              break;
+           default:
+              lnaMaxSetting	= 9;
+	      denominator	= 8192;
+              break;
+        }
 
+	lnaState	= gain * lnaMaxSetting / 100;
 	if (hwVersion >= 2) {
 	   if (antenna == 0)
            err = my_mir_sdr_RSPII_AntennaControl (mir_sdr_RSPII_ANTENNA_A);
         else
            err = my_mir_sdr_RSPII_AntennaControl (mir_sdr_RSPII_ANTENNA_B);
 	}
-	   
+
+        if (hwVersion == 3) {   // duo
+           err  = my_mir_sdr_rspDuo_TunerSel (mir_sdr_rspDuo_Tuner_1);
+           if (err != mir_sdr_Success)
+              fprintf (stderr, "error %d in setting of rspDuo\n", err);
+        }
+
 	_I_Buffer	= new RingBuffer<std::complex<float>>(2 * 1024 * 1024);
 
 	running		= false;
@@ -156,20 +184,23 @@ void myStreamCallback (int16_t		*xi,
 	               int32_t		fsChanged,
 	               uint32_t		numSamples,
 	               uint32_t		reset,
+	               uint32_t		hwRemoved,
 	               void		*cbContext) {
 int16_t	i;
 sdrplayHandler	*p	= static_cast<sdrplayHandler *> (cbContext);
+float	denominator	= (float) p -> denominator;
 std::complex<float> localBuf [numSamples];
 
+	if (reset || hwRemoved)
+	   return;
 	for (i = 0; i <  (int)numSamples; i ++)
-	   localBuf [i] = std::complex<float> (float (xi [i]) / 2048.0,
-	                                       float (xq [i]) / 2048.0);
+	   localBuf [i] = std::complex<float> (float (xi [i]) / denominator,
+	                                       float (xq [i]) / denominator);
 	p -> _I_Buffer -> putDataIntoBuffer (localBuf, numSamples);
 	(void)	firstSampleNum;
 	(void)	grChanged;
 	(void)	rfChanged;
 	(void)	fsChanged;
-	(void)	reset;
 }
 
 void	myGainChangeCallback (uint32_t	gRdB,
@@ -184,19 +215,19 @@ bool	sdrplayHandler::restartReader	(void) {
 int	gRdBSystem;
 int	samplesPerPacket;
 mir_sdr_ErrT	err;
-int localGain	= 102 - theGain;
+int	GRdB	= 30;
 
 	if (running)
 	   return true;
 
-	err	= my_mir_sdr_StreamInit (&localGain,
+	err	= my_mir_sdr_StreamInit (&GRdB,
 	                                 double (inputRate) / MHz (1),
 	                                 double (frequency) / Mhz (1),
 	                                 mir_sdr_BW_0_200,
 	                                 mir_sdr_IF_Zero,
-	                                 0,	// lnaEnable do not know yet
+	                                 lnaState,
 	                                 &gRdBSystem,
-	                                 autogain, // useGrAltMode,do not know yet
+	                                 true,
 	                                 &samplesPerPacket,
 	                                 (mir_sdr_StreamCallback_t)myStreamCallback,
 	                                 (mir_sdr_GainChangeCallback_t)myGainChangeCallback,
@@ -205,11 +236,11 @@ int localGain	= 102 - theGain;
 	   fprintf (stderr, "Error %d on streamInit\n", err);
 	   return false;
 	}
+
 	my_mir_sdr_SetPpm	((float)ppmCorrection);
-//	my_mir_sdr_SetRf	((float)frequency, 1, 0);
-//	my_mir_sdr_SetGr	(102 - theGain, 1, 0);
-//	if (autogain)
-//	   my_mir_sdr_AgcControl (autogain, -(102 - theGain), 0, 0, 0, 0, 1);
+	my_mir_sdr_AgcControl (true,
+                               -30,
+                               0, 0, 0, 0, lnaState);
 
 	err		= my_mir_sdr_SetDcMode (4, 1);
 	err		= my_mir_sdr_SetDcTrackTime (63);

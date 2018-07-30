@@ -1,0 +1,20 @@
+####################
+16:02:09 2018-01-23
+airspy-radio, Copyright Jan van Katwijk
+ Lazy Chair Computing
+airspy init is geslaagd
+Installing device failed, fatal43
+multimon-ng  (C) 1996/1997 by Tom Sailer HB9JNX/AE4WA
+             (C) 2012-2014 by Elias Oenal
+available demodulators: POCSAG512 POCSAG1200 POCSAG2400 FLEX EAS UFSK1200 CLIPFSK FMSFSK AFSK1200 AFSK2400 AFSK2400_2 AFSK2400_3 HAPN4800 FSK9600 DTMF ZVEI1 ZVEI2 ZVEI3 DZVEI PZVEI EEA EIA CCIR MORSE_CW DUMPCSV SCOPE
+warning: noninteger number of samples read
+####################
+18:18:59 2018-01-23
+multimon-ng  (C) 1996/1997 by Tom Sailer HB9JNX/AE4WA
+             (C) 2012-2014 by Elias Oenal
+available demodulators:airspy-radio, Copyright Jan van Katwijk
+ Lazy Chair Computing
+ POCSAG512airspy init is geslaagd
+ POCSAG1200 POCSAG2400 FLEX EAS UFSK1200 CLIPFSK FMSFSK AFSK1200 AFSK2400 AFSK2400_2 AFSK2400_3 HAPN4800 FSK9600 DTMF ZVEI1 ZVEI2 ZVEI3 DZVEI PZVEI EEA EIA CCIR MORSE_CW DUMPCSV SCOPE
+Installing device failed, fatalwarning: noninteger number of samples read
+43

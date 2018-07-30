@@ -32,9 +32,10 @@ The command line parameters are
 	-D enables de-emphasis (default: off), useful for FM
 	-Z enables lowpass filtering (default: off) of the audiosignal
 	-s audio frequency, default is 22050
-	-g tuner_gain, range 1 .. 100 (default: 35)
+	-g tuner_gain. For the sdrplay the value will be scaled to an \
+value for lna gain reduction. If gain reduction is set to automatic.
 	-O output filename ( a '-' dumps output to stdout, as does
-	   omitting a filename.
+	   omitting a filename.)
 
 For the SDRplay we have additionally the following parameters
 

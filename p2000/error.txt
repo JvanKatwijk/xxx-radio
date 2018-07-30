@@ -1,10 +1,52 @@
 ####################
-20:58:07 2018-01-20
+18:49:21 2018-01-23
+airspy-radio, Copyright Jan van Katwijk
+ Lazy Chair Computing
+airspy init is geslaagd
+multimon-ng  (C) 1996/1997 by Tom Sailer HB9JNX/AE4WA
+             (C) 2012-2014 by Elias Oenal
+available demodulators: POCSAG512 POCSAG1200 POCSAG2400 FLEX EAS UFSK1200 CLIPFSK FMSFSK AFSK1200 AFSK2400 AFSK2400_2 AFSK2400_3 HAPN4800 FSK9600 DTMF ZVEI1 ZVEI2 ZVEI3 DZVEI PZVEI EEA EIA CCIR MORSE_CW DUMPCSV SCOPE
+Installing device failed, fatalwarning: noninteger number of samples read
+43
+####################
+20:00:11 2018-01-23
+airspy-radio, Copyright Jan van Katwijk
+ Lazy Chair Computing
+airspy init is geslaagd
+Installing device failed, fatal43
+multimon-ng  (C) 1996/1997 by Tom Sailer HB9JNX/AE4WA
+             (C) 2012-2014 by Elias Oenal
+available demodulators: POCSAG512 POCSAG1200 POCSAG2400 FLEX EAS UFSK1200 CLIPFSK FMSFSK AFSK1200 AFSK2400 AFSK2400_2 AFSK2400_3 HAPN4800 FSK9600 DTMF ZVEI1 ZVEI2 ZVEI3 DZVEI PZVEI EEA EIA CCIR MORSE_CW DUMPCSV SCOPE
+warning: noninteger number of samples read
+####################
+13:38:32 2018-02-17
+airspy-radio, Copyright Jan van Katwijk
+ Lazy Chair Computing
+airspy init is geslaagd
+Installing device failed, fatal43
+multimon-ng  (C) 1996/1997 by Tom Sailer HB9JNX/AE4WA
+             (C) 2012-2014 by Elias Oenal
+available demodulators: POCSAG512 POCSAG1200 POCSAG2400 FLEX EAS UFSK1200 CLIPFSK FMSFSK AFSK1200 AFSK2400 AFSK2400_2 AFSK2400_3 HAPN4800 FSK9600 DTMF ZVEI1 ZVEI2 ZVEI3 DZVEI PZVEI EEA EIA CCIR MORSE_CW DUMPCSV SCOPE
+warning: noninteger number of samples read
+####################
+13:39:06 2018-02-17
+sdrplay-radio, Copyright Jan van Katwijk
+ Lazy Chair Computing
+multimon-ng  (C) 1996/1997 by Tom Sailer HB9JNX/AE4WA
+             (C) 2012-2014 by Elias Oenal
+available demodulators: POCSAG512 POCSAG1200 POCSAG2400 FLEX EAS UFSK1200 CLIPFSK FMSFSK AFSK1200 AFSK2400 AFSK2400_2 AFSK2400_3 HAPN4800parameters: frequency = 169650000, working rate = 192000, sampling rate = 22050
+ FSK9600 DTMF ZVEI1 ZVEI2 ZVEI3 DZVEI PZVEI EEA EIA CCIR MORSE_CW DUMPCSV SCOPE
+Signal caught, exiting!
+got the message, stopping
+streamUnit returns 0
+fmprocessor is gestopt
+####################
+21:53:45 2018-04-23
 airspy-radio, Copyright Jan van Katwijk
  Lazy Chair Computing
 airspy init is geslaagd
 samplerate = 2500000, will be converted to 2112000
-parameters: frequency = 169650, working rate = 192000, sampling rate = 22050
+parameters: frequency = 169650000, working rate = 192000, sampling rate = 22050
 multimon-ng  (C) 1996/1997 by Tom Sailer HB9JNX/AE4WA
              (C) 2012-2014 by Elias Oenal
 available demodulators: POCSAG512 POCSAG1200 POCSAG2400 FLEX EAS UFSK1200 CLIPFSK FMSFSK AFSK1200 AFSK2400 AFSK2400_2 AFSK2400_3 HAPN4800 FSK9600 DTMF ZVEI1 ZVEI2 ZVEI3 DZVEI PZVEI EEA EIA CCIR MORSE_CW DUMPCSV SCOPE
@@ -13,7 +55,20 @@ got the message, stopping
 normal termination
 fmprocessor is gestopt
 ####################
-21:00:49 2018-01-20
+12:08:30 2018-07-06
+multimon-ng  (C) 1996/1997 by Tom Sailer HB9JNX/AE4WA
+             (C) 2012-2014 by Elias Oenal
+available demodulators: POCSAG512 POCSAG1200 POCSAG2400 FLEX EAS UFSK1200 CLIPFSK FMSFSK AFSK1200 AFSK2400 AFSK2400_2 AFSK2400_3 HAPN4800 FSK9600 DTMF ZVEI1 ZVEI2 ZVEI3 DZVEI PZVEI EEA EIA CCIR MORSE_CW DUMPCSV SCOPE
+airspy-radio, Copyright Jan van Katwijk
+ Lazy Chair Computing
+airspy init is geslaagd
+samplerate = 2500000, will be converted to 2112000
+parameters: frequency = 169650000, working rate = 192000, sampling rate = 22050
+Signal caught, exiting!
+got the message, stopping
+fmprocessor is gestopt
+####################
+12:08:53 2018-07-06
 airspy-radio, Copyright Jan van Katwijk
  Lazy Chair Computing
 airspy init is geslaagd
@@ -24,17 +79,99 @@ samplerate = 2500000, will be converted to 2112000
 parameters: frequency = 169650000, working rate = 192000, sampling rate = 22050
 Signal caught, exiting!
 got the message, stopping
+normal termination
 fmprocessor is gestopt
 ####################
-21:08:30 2018-01-20
+12:09:22 2018-07-06
+airspy-radio, Copyright Jan van Katwijk
+ Lazy Chair Computing
+airspy init is geslaagd
 multimon-ng  (C) 1996/1997 by Tom Sailer HB9JNX/AE4WA
              (C) 2012-2014 by Elias Oenal
-available demodulators: POCSAG512 POCSAG1200 POCSAG2400airspy-radio, Copyright Jan van Katwijk
- Lazy Chair Computing
- FLEX EAS UFSK1200airspy init is geslaagd
- CLIPFSK FMSFSK AFSK1200 AFSK2400 AFSK2400_2 AFSK2400_3 HAPN4800 FSK9600 DTMF ZVEI1 ZVEI2 ZVEI3 DZVEI PZVEI EEA EIA CCIR MORSE_CW DUMPCSV SCOPE
+available demodulators: POCSAG512 POCSAG1200 POCSAG2400 FLEX EAS UFSK1200 CLIPFSK FMSFSK AFSK1200 AFSK2400 AFSK2400_2 AFSK2400_3 HAPN4800 FSK9600 DTMF ZVEI1 ZVEI2 ZVEI3 DZVEI PZVEI EEA EIA CCIR MORSE_CW DUMPCSV SCOPE
 samplerate = 2500000, will be converted to 2112000
 parameters: frequency = 169650000, working rate = 192000, sampling rate = 22050
 Signal caught, exiting!
 got the message, stopping
+normal termination
+fmprocessor is gestopt
+####################
+12:50:31 2018-07-28
+sdrplay-radio, Copyright Jan van Katwijk
+ Lazy Chair Computing
+multimon-ng  (C) 1996/1997 by Tom Sailer HB9JNX/AE4WA
+             (C) 2012-2014 by Elias Oenal
+available demodulators: POCSAG512 POCSAG1200 POCSAG2400 FLEX EAS UFSK1200 CLIPFSK FMSFSK AFSK1200 AFSK2400 AFSK2400_2 AFSK2400_3 HAPN4800 FSK9600 DTMF ZVEI1 ZVEI2 ZVEI3 DZVEI PZVEI EEA EIA CCIR MORSE_CW DUMPCSV SCOPE
+parameters: frequency = 169650000, working rate = 192000, sampling rate = 22050
+Error 3 on streamInit
+device does not start, fatal
+####################
+12:51:20 2018-07-28
+sdrplay-radio, Copyright Jan van Katwijk
+ Lazy Chair Computing
+multimon-ng  (C) 1996/1997 by Tom Sailer HB9JNX/AE4WA
+             (C) 2012-2014 by Elias Oenal
+available demodulators: POCSAG512 POCSAG1200 POCSAG2400 FLEX EAS UFSK1200 CLIPFSK FMSFSK AFSK1200 AFSK2400 AFSK2400_2 AFSK2400_3 HAPN4800 FSK9600 DTMF ZVEI1 ZVEI2 ZVEI3 DZVEI PZVEI EEA EIA CCIR MORSE_CW DUMPCSV SCOPE
+parameters: frequency = 169650000, working rate = 192000, sampling rate = 22050
+Error 3 on streamInit
+device does not start, fatal
+####################
+12:51:46 2018-07-28
+sdrplay-radio, Copyright Jan van Katwijk
+ Lazy Chair Computing
+multimon-ng  (C) 1996/1997 by Tom Sailer HB9JNX/AE4WA
+             (C) 2012-2014 by Elias Oenal
+available demodulators: POCSAG512 POCSAG1200 POCSAG2400 FLEX EAS UFSK1200 CLIPFSK FMSFSK AFSK1200 AFSK2400 AFSK2400_2 AFSK2400_3 HAPN4800 FSK9600 DTMF ZVEI1 ZVEI2 ZVEI3 DZVEI PZVEI EEA EIA CCIR MORSE_CW DUMPCSV SCOPE
+parameters: frequency = 169650000, working rate = 192000, sampling rate = 22050
+Signal caught, exiting!
+got the message, stopping
+streamUnit returns 0
+fmprocessor is gestopt
+####################
+12:36:52 2018-07-29
+sdrplay-radio, Copyright Jan van Katwijk
+ Lazy Chair Computing
+multimon-ng  (C) 1996/1997 by Tom Sailer HB9JNX/AE4WA
+             (C) 2012-2014 by Elias Oenal
+available demodulators: POCSAG512 POCSAG1200 POCSAG2400 FLEX EAS UFSK1200 CLIPFSK FMSFSK AFSK1200 AFSK2400 AFSK2400_2 AFSK2400_3 HAPN4800 FSK9600 DTMF ZVEI1 ZVEI2 ZVEI3 DZVEI PZVEI EEA EIA CCIR MORSE_CW DUMPCSV SCOPE
+parameters: frequency = 169650000, working rate = 192000, sampling rate = 22050
+Signal caught, exiting!
+got the message, stopping
+streamUnit returns 0
+fmprocessor is gestopt
+####################
+12:41:29 2018-07-29
+sdrplay-radio, Copyright Jan van Katwijk
+ Lazy Chair Computing
+multimon-ng  (C) 1996/1997 by Tom Sailer HB9JNX/AE4WA
+             (C) 2012-2014 by Elias Oenal
+available demodulators: POCSAG512 POCSAG1200 POCSAG2400 FLEX EAS UFSK1200 CLIPFSK FMSFSK AFSK1200 AFSK2400 AFSK2400_2 AFSK2400_3 HAPN4800 FSK9600 DTMF ZVEI1 ZVEI2 ZVEI3 DZVEI PZVEI EEA EIA CCIR MORSE_CW DUMPCSV SCOPE
+parameters: frequency = 169650000, working rate = 192000, sampling rate = 22050
+Signal caught, exiting!
+got the message, stopping
+streamUnit returns 0
+fmprocessor is gestopt
+####################
+12:42:10 2018-07-29
+sdrplay-radio, Copyright Jan van Katwijk
+ Lazy Chair Computing
+multimon-ng  (C) 1996/1997 by Tom Sailer HB9JNX/AE4WA
+             (C) 2012-2014 by Elias Oenal
+available demodulators: POCSAG512 POCSAG1200 POCSAG2400 FLEX EAS UFSK1200 CLIPFSK FMSFSK AFSK1200 AFSK2400 AFSK2400_2 AFSK2400_3 HAPN4800 FSK9600 DTMF ZVEI1 ZVEI2 ZVEI3 DZVEI PZVEI EEA EIA CCIR MORSE_CW DUMPCSV SCOPE
+parameters: frequency = 169650000, working rate = 192000, sampling rate = 22050
+Signal caught, exiting!
+got the message, stopping
+streamUnit returns 0
+fmprocessor is gestopt
+####################
+12:52:26 2018-07-29
+sdrplay-radio, Copyright Jan van Katwijk
+ Lazy Chair Computing
+multimon-ng  (C) 1996/1997 by Tom Sailer HB9JNX/AE4WA
+             (C) 2012-2014 by Elias Oenal
+available demodulators: POCSAG512 POCSAG1200 POCSAG2400 FLEX EAS UFSK1200 CLIPFSK FMSFSK AFSK1200 AFSK2400 AFSK2400_2 AFSK2400_3 HAPN4800 FSK9600 DTMF ZVEI1 ZVEI2 ZVEI3 DZVEI PZVEI EEA EIA CCIR MORSE_CW DUMPCSV SCOPE
+parameters: frequency = 169650000, working rate = 192000, sampling rate = 22050
+Signal caught, exiting!
+got the message, stopping
+streamUnit returns 0
 fmprocessor is gestopt

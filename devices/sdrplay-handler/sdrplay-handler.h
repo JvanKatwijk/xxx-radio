@@ -37,6 +37,7 @@ typedef void (*mir_sdr_StreamCallback_t)(int16_t	*xi,
 	                                 int32_t	fsChanged,
 	                                 uint32_t	numSamples,
 	                                 uint32_t	reset,
+	                                 uint32_t	hwRemoved,
 	                                 void		*cbContext);
 typedef	void	(*mir_sdr_GainChangeCallback_t)(uint32_t	gRdB,
 	                                        uint32_t	lnaGRdB,
@@ -60,6 +61,8 @@ typedef mir_sdr_ErrT (*pfn_mir_sdr_StreamUninit)(void);
 typedef mir_sdr_ErrT (*pfn_mir_sdr_SetRf)(double drfHz, int abs, int syncUpdate);
 typedef mir_sdr_ErrT (*pfn_mir_sdr_SetFs)(double dfsHz, int abs, int syncUpdate, int reCal);
 typedef mir_sdr_ErrT (*pfn_mir_sdr_SetGr)(int gRdB, int abs, int syncUpdate);
+typedef mir_sdr_ErrT (*pfn_mir_sdr_RSP_SetGr)(int gRdB, int lnaState,
+                                                       int abs, int syncUpdate);
 typedef mir_sdr_ErrT (*pfn_mir_sdr_SetGrParams)(int minimumGr, int lnaGrThreshold);
 typedef mir_sdr_ErrT (*pfn_mir_sdr_SetDcMode)(int dcCal, int speedUp);
 typedef mir_sdr_ErrT (*pfn_mir_sdr_SetDcTrackTime)(int trackTime);
@@ -76,6 +79,8 @@ typedef mir_sdr_ErrT (*pfn_mir_sdr_GetDevices) (mir_sdr_DeviceT *, uint32_t *, u
 typedef mir_sdr_ErrT (*pfn_mir_sdr_GetCurrentGain) (mir_sdr_GainValuesT *);
 typedef mir_sdr_ErrT (*pfn_mir_sdr_GetHwVersion) (unsigned char *);
 typedef mir_sdr_ErrT (*pfn_mir_sdr_RSPII_AntennaControl) (mir_sdr_RSPII_AntennaSelectT);
+typedef mir_sdr_ErrT (*pfn_mir_sdr_rspDuo_TunerSel) (mir_sdr_rspDuo_TunerSelT);
+
 typedef mir_sdr_ErrT (*pfn_mir_sdr_SetDeviceIdx) (unsigned int);
 typedef mir_sdr_ErrT (*pfn_mir_sdr_ReleaseDeviceIdx) (unsigned int);
 
@@ -99,6 +104,7 @@ public:
 	int32_t	Samples			(void);
 	void	resetBuffer		(void);
 	RingBuffer<std::complex<float>>	*_I_Buffer;
+	int	denominator;
 private:
 	pfn_mir_sdr_StreamInit	my_mir_sdr_StreamInit;
 	pfn_mir_sdr_Reinit	my_mir_sdr_Reinit;
@@ -106,6 +112,8 @@ private:
 	pfn_mir_sdr_SetRf	my_mir_sdr_SetRf;
 	pfn_mir_sdr_SetFs	my_mir_sdr_SetFs;
 	pfn_mir_sdr_SetGr	my_mir_sdr_SetGr;
+	pfn_mir_sdr_RSP_SetGr   my_mir_sdr_RSP_SetGr;
+
 	pfn_mir_sdr_SetGrParams	my_mir_sdr_SetGrParams;
 	pfn_mir_sdr_SetDcMode	my_mir_sdr_SetDcMode;
 	pfn_mir_sdr_SetDcTrackTime my_mir_sdr_SetDcTrackTime;
@@ -125,10 +133,12 @@ private:
 	pfn_mir_sdr_GetCurrentGain my_mir_sdr_GetCurrentGain;
 	pfn_mir_sdr_GetHwVersion my_mir_sdr_GetHwVersion;
 	pfn_mir_sdr_RSPII_AntennaControl my_mir_sdr_RSPII_AntennaControl;
+	pfn_mir_sdr_rspDuo_TunerSel my_mir_sdr_rspDuo_TunerSel;
 	pfn_mir_sdr_SetDeviceIdx my_mir_sdr_SetDeviceIdx;
 	pfn_mir_sdr_ReleaseDeviceIdx my_mir_sdr_ReleaseDeviceIdx;
 
 	int16_t		hwVersion;
+	int		lnaState;
 	int16_t		deviceIndex;
 	uint32_t	numofDevs;
 	bool		loadFunctions	(void);
