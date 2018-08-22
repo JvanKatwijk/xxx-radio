@@ -175,3 +175,27 @@ Signal caught, exiting!
 got the message, stopping
 streamUnit returns 0
 fmprocessor is gestopt
+####################
+08:34:45 2018-07-30
+sdrplay-radio, Copyright Jan van Katwijk
+ Lazy Chair Computing
+multimon-ng  (C) 1996/1997 by Tom Sailer HB9JNX/AE4WA
+             (C) 2012-2014 by Elias Oenal
+available demodulators: POCSAG512 POCSAG1200 POCSAG2400 FLEX EAS UFSK1200 CLIPFSK FMSFSK AFSK1200 AFSK2400 AFSK2400_2 AFSK2400_3 HAPN4800 FSK9600 DTMF ZVEI1 ZVEI2 ZVEI3 DZVEI PZVEI EEA EIA CCIR MORSE_CW DUMPCSV SCOPE
+parameters: frequency = 169650000, working rate = 192000, sampling rate = 22050
+Signal caught, exiting!
+got the message, stopping
+streamUnit returns 0
+fmprocessor is gestopt
+####################
+08:35:19 2018-07-30
+sdrplay-radio, Copyright Jan van Katwijk
+ Lazy Chair Computing
+multimon-ng  (C) 1996/1997 by Tom Sailer HB9JNX/AE4WA
+             (C) 2012-2014 by Elias Oenal
+available demodulators: POCSAG512 POCSAG1200 POCSAG2400 FLEX EAS UFSK1200 CLIPFSK FMSFSK AFSK1200 AFSK2400 AFSK2400_2 AFSK2400_3 HAPN4800 FSK9600 DTMF ZVEI1 ZVEI2 ZVEI3 DZVEI PZVEI EEA EIA CCIR MORSE_CW DUMPCSV SCOPE
+parameters: frequency = 169650000, working rate = 192000, sampling rate = 22050
+Signal caught, exiting!
+got the message, stopping
+streamUnit returns 0
+fmprocessor is gestopt

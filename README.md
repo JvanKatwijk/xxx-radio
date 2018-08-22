@@ -58,6 +58,8 @@ In the (sub)directory P2000 a python script is given (obtained from
 https://nl.oneguyoneblog.com/2016/08/09/p2000-ontvangen-decoderen-raspberry-pi/)
 and adapted for use with the XXX-Radio to decode P2000 messages.
 
+![xxx-radio with input](/xxx-radio.png?raw=true)
+
 
 To listen - in the Netherlands - to the ONLY classical music station in the FM broadcast band use
 
