@@ -32,8 +32,8 @@ The command line parameters are
 	-D enables de-emphasis (default: off), useful for FM
 	-Z enables lowpass filtering (default: off) of the audiosignal
 	-s audio frequency, default is 22050
-	-g tuner_gain. For the sdrplay the value will be scaled to an \
-value for lna gain reduction. If gain reduction is set to automatic.
+	-g tuner_gain. For the sdrplay the value will be scaled to an
+           value for lna gain reduction. If gain reduction is set to automatic.
 	-O output filename ( a '-' dumps output to stdout, as does
 	   omitting a filename.)
 
@@ -99,8 +99,8 @@ To create the executable the following packages are needed
         Jan van Katwijk (J.vanKatwijk@gmail.com)
         Lazy Chair Computing
 
-        The Qt-DAB software is made available under the GPL-2.0.
-        The SDR-J software, of which the Qt-DAB software is a part,
+        This software is made available under the GPL-2.0.
+        The SDR-J software, of which this software is a part,
         is distributed in the hope that it will be useful,
         but WITHOUT ANY WARRANTY; without even the implied warranty of
         MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
